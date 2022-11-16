@@ -10,15 +10,20 @@ import NoticeWrite from "./NoticeWrite";
 
 function Notice() {
   const data = noticeData.data;
-  // const [posts, setPosts] = useState([])
-  // const getPosts = () => {
-  //   axios
-  //     .get('')
-  //     .then((response) => {
-  //       setPosts(response.data)
-  //     })
-  // }
-  // useEffect(getPosts, []);
+  const [posts, setPosts] = useState("");
+
+  const getPosts = () => {
+    axios.get("/api/posting").then((response) => {
+      let post = response.data;
+      // console.log(`서버로부터: ${post}`);
+      console.log(post);
+      setPosts(post);
+    });
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, []);
 
   return (
     <div>
@@ -32,15 +37,17 @@ function Notice() {
       <div className={styles.noticeDiv}>
         <table className={styles.noticeTable}>
           <colgroup>
-            <col width="7%" />
-            <col width="62%" />
-            <col width="19%" />
+            <col width="5%" />
+            <col width="50%" />
+            <col width="20%" />
+            <col width="18%" />
             <col width="*" />
           </colgroup>
           <thead>
             <tr>
               <th>NO</th>
               <th>제목</th>
+              <th>작성자</th>
               <th>날짜</th>
               <th>조회수</th>
             </tr>
@@ -52,6 +59,7 @@ function Notice() {
                 idx={item.idx}
                 title={item.title}
                 date={item.date}
+                writer={item.writer}
                 view={item.view}
               />
             );

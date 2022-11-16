@@ -1,4 +1,10 @@
-import { LOGIN_USER, REGISTER_USER, AUTH_USER } from "_actions/types";
+import { faBriefcaseClock } from "@fortawesome/free-solid-svg-icons";
+import {
+  LOGIN_USER,
+  REGISTER_USER,
+  AUTH_USER,
+  USER_POSTING,
+} from "_actions/types";
 
 export default function (state = {}, action) {
   switch (action.type) {
@@ -10,6 +16,9 @@ export default function (state = {}, action) {
       break;
     case AUTH_USER:
       return { ...state, userData: action.payload };
+      break;
+    case USER_POSTING:
+      return { ...state, postSuccess: action.payload };
     default:
       return state;
   }

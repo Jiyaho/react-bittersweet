@@ -25,21 +25,7 @@ function Nav() {
     });
   };
 
-  // const getUserName = () => {
-  //   axios.get("/api/users/username").then((response) => {
-  //     let user = response.data;
-  //     console.log(`유저네임: ${user}`);
-  //     if (user.toString().includes("object")) {
-  //       setIsLogin(true);
-  //       setLogInUserName("🔐LOG-IN");
-  //     } else {
-  //       setIsLogin(false);
-  //       setLogInUserName(`${user}님 🔓LOG-OUT`);
-  //     }
-  //   });
-  // }
-
-  useEffect(() => {
+  const getUserName = () => {
     axios.get("/api/users/username").then((response) => {
       let user = response.data;
       console.log(`유저네임: ${user}`);
@@ -51,6 +37,10 @@ function Nav() {
         // setLogInUserName(`${user}님 🔓LOG-OUT`);
       }
     });
+  };
+
+  useEffect(() => {
+    getUserName();
   }, [isLogin, logInUserName]);
 
   return (

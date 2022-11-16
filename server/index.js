@@ -4,6 +4,7 @@ const config = require("./config/key");
 const cookieParser = require("cookie-parser");
 const { User } = require("./models/User");
 const { auth } = require("./middleware/auth");
+const { Posting } = require("./models/Posting");
 
 app.use(express.json());
 //"application/json" 형식의 데이터를 parse해 줌
@@ -13,10 +14,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.get("/", (req, res) => res.send("Hello World!!!"));
-
-app.get("/api/users/hello", (req, res) => {
-  res.send("안녕!!서버에서 보내는 데이터야!");
-});
 
 const mongoose = require("mongoose");
 mongoose
@@ -99,10 +96,26 @@ app.get("/api/users/logout", auth, (req, res) => {
 app.get("/api/users/username", auth, (req, res) => {
   User.findById({ _id: req.user._id }, (err, user) => {
     if (err) return res.json({ success: false, err });
-    // if (err) {
-    //   return res.send("로그인");
-    // }
     return res.status(200).send(req.user.name);
+  });
+});
+
+//=====Posting=====
+app.post("/api/posting", (req, res) => {
+  const posting = new Posting(req.body);
+  posting.save((err, userPosting) => {
+    if (err) return res.json({ postSuccess: false, err });
+    return res.status(200).json({ postSuccess: true });
+  });
+});
+
+//=====Get Posts=====
+app.get("/api/posting", (req, res) => {
+  Posting.find((err, result) => {
+    // console.log(result);
+    // res.json(result);
+    if (err) return res.json({ getPostsSuccess: false, err });
+    return res.status(200).send(result);
   });
 });
 

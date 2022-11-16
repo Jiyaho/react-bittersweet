@@ -13,7 +13,18 @@ import RegisterPage from "routes/RegisterPage";
 import Auth from "hoc/auth";
 
 function App() {
-  //페이지 접근 권한 설정
+  // =====페이지 접근 권한 설정=====
+  // Auth(SpecificComponent, option, adminRoute = null);
+  // 위 function의 3가지 Parameter를 App.js에 부여해주어 페이지 접근 권한을 설정해준다.
+
+  // option의 3가지 선택지
+  // 1. null: 아무나 출입 가능한 페이지
+  // 2. true: 로그인한 유저만 출입 가능한 페이지
+  // 3. false: 로그인한 유저는 출입 불가능한 페이지
+
+  // adminRoute 선택지
+  // 1. null: 아무나 출입 가능한 페이지 (default는 null로 설정)
+  // 2. true: admin만 출입 가능한 페이지
   const AuthHomePage = Auth(Home, null);
   const AuthLoginPage = Auth(LoginPage, false);
   const AuthRegisterPage = Auth(RegisterPage, false);

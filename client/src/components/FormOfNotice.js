@@ -2,7 +2,7 @@ import styles from "css/App.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-function FormOfNotice({ idx, title, date, view }) {
+function FormOfNotice({ idx, title, date, writer, view }) {
   return (
     <tbody>
       <tr>
@@ -10,6 +10,7 @@ function FormOfNotice({ idx, title, date, view }) {
         <td className={styles.td_content}>
           <Link to={`/notice-detail/${idx}`}>{title}</Link>
         </td>
+        <td>{writer}</td>
         <td>{date}</td>
         <td>{view}</td>
       </tr>
@@ -21,6 +22,7 @@ FormOfNotice.propTypes = {
   idx: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
+  writer: PropTypes.string.isRequired,
   view: PropTypes.string.isRequired,
 };
 
