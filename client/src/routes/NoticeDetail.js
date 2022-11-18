@@ -11,24 +11,12 @@ function NoticeDetail() {
   const { _id } = useParams();
   const navigate = useNavigate();
 
-  // const getPost = () => {
-  //   axios.get("/api/posting/_id").then((response) => {
-  //     let result = response.data;
-  //     console.log(result);
-  //     setDatas(result);
-  //   });
-  // };
-
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
       let post = response.data;
-      console.log(post);
       setPosts(post);
     });
   };
-  // const getDatas = () => {
-  //   setDatas(result);
-  // };
 
   const filteredNoticeDetail = posts.filter((item) => {
     return item._id === _id;
@@ -42,12 +30,12 @@ function NoticeDetail() {
     <div>
       <Nav />
       <h2 className={styles.page_title}>NOTICE DETAIL</h2>
-      {posts.map((item) => {
+      {filteredNoticeDetail.map((item) => {
         return (
           <FormOfNoticeDetail
-            key={item._id}
-            header={item.title}
-            date={item.date}
+            key={item.id}
+            title={item.title}
+            date={item.date.substring(0, 10)}
             writer={item.writer}
             content={item.content}
           />

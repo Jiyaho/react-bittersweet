@@ -5,15 +5,37 @@ import FormOfNotice from "components/FormOfNotice";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { userPosting } from "_actions/user_action";
+import { useDispatch } from "react-redux";
 
 function Notice() {
+  const dispatch = useDispatch();
   const [posts, setPosts] = useState([]);
+  const [view, setView] = useState(0);
 
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
       let post = response.data;
       console.log(post);
       setPosts(post);
+    });
+  };
+
+  const getCounts = (e) => {
+    console.log(e.target.value);
+    const postingId = e.target.value;
+    posts.filter((item) => {
+      if (item._id === postingId) {
+        let body = { view: view };
+        // setView(view + 1);
+        dispatch(userPosting(body)).then((response) => {
+          if (response.payload.postSuccess) {
+            console.log("조회수 업데이트 성공!");
+          } else {
+            alert("조회수 업데이트 Error");
+          }
+        });
+      }
     });
   };
 
@@ -52,11 +74,15 @@ function Notice() {
             return (
               <FormOfNotice
                 key={item.id}
-                idx={item.id}
+                _id={item._id}
+                no={item.id}
                 title={item.title}
-                date={item.date}
+                titleValue={item._id}
+                onClick={getCounts}
+                date={item.date.substring(0, 10)}
                 writer={item.writer}
-                view="0"
+                view={item.view}
+                viewValue={view}
               />
             );
           })}

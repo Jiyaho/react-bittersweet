@@ -1,13 +1,13 @@
 import styles from "css/App.module.css";
 import PropTypes from "prop-types";
 
-function FormOfNoticeDetail({ header, writer, content, date }) {
+function FormOfNoticeDetail({ title, writer, content, date }) {
   return (
     <section className={styles.noticeDetail}>
       <header>
         <ul>
-          <li className={styles.detailHeader}>{header}</li>
-          <li className={styles.detailDate}>{writer}</li>
+          <li className={styles.detailHeader}>{title}</li>
+          <li className={styles.detailWriter}>{writer}</li>
           <li className={styles.detailDate}>{date}</li>
         </ul>
       </header>
@@ -19,7 +19,7 @@ function FormOfNoticeDetail({ header, writer, content, date }) {
 }
 
 FormOfNoticeDetail.propTypes = {
-  header: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };

@@ -571,6 +571,11 @@ h1 {
 .td_content {
   text-align: left;
 }
+.td_content button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 /* noticeDetail */
 .noticeDetail ul {
@@ -589,8 +594,12 @@ h1 {
 .detailHeader {
   font-size: 1.4em;
 }
+.detailWriter {
+  margin-left: 600px;
+  font-size: 1.2em;
+}
 .detailDate {
-  margin-top: 3px;
+  font-size: 1.1em;
 }
 .noticeDetail p {
   width: 75%;

@@ -116,25 +116,5 @@ app.get("/api/posting", (req, res) => {
   });
 });
 
-//=====Get a Post=====
-app.get("/api/posting/_id", (req, res) => {
-  Posting.findOne({ _id: req.posting._id }, (err, result) => {
-    if (err) return res.json({ getPostSuccess: false, err });
-    return res.status(200).send(result);
-  });
-});
-
-// app.get("/api/posting/:_id", (req, res) => {
-//   Posting.findOne({ _id: req.posting._id }, (err, result) => {
-//     if (err) return res.json({ getPostSuccess: false, err });
-//     return res.status(200).json({
-//       _id: req.posting._id,
-//       writer: req.posting.writer,
-//       title: req.posting.title,
-//       content: req.posting.content,
-//     });
-//   });
-// });
-
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -22,6 +22,10 @@ const postingSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+  view: {
+    type: Number,
+    default: 0,
+  },
 });
 
 postingSchema.plugin(AutoIncrement, { inc_field: "id" }); //id 값 숫자 자동 증가

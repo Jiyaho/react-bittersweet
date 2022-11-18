@@ -1,4 +1,3 @@
-import { faBriefcaseClock } from "@fortawesome/free-solid-svg-icons";
 import {
   LOGIN_USER,
   REGISTER_USER,

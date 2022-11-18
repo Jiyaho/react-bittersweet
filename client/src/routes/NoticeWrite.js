@@ -23,43 +23,6 @@ function NoticeWrite() {
   const onContentHandler = (e) => {
     setContent(e.target.value);
   };
-
-  const today = new Date();
-  const year = today.getFullYear();
-  let getMonth = () => {
-    let month = today.getMonth() + 1;
-    if (month < 10) {
-      return "0" + month;
-    } else {
-      return month;
-    }
-  };
-  let getDate = () => {
-    let date = today.getDate();
-    if (date < 10) {
-      return "0" + date;
-    } else {
-      return date;
-    }
-  };
-
-  const [noticeContent, setNoticeContent] = useState({
-    idx: "",
-    writer: "",
-    title: "",
-    content: "",
-    date: `${year}-${getMonth()}-${getDate()}`,
-  });
-
-  const getValue = (e) => {
-    const { name, value } = e.target;
-    setNoticeContent({
-      ...noticeContent,
-      [name]: value,
-    });
-    console.log(noticeContent);
-  };
-
   const onSubmit = (e) => {
     e.preventDefault();
     let body = {
