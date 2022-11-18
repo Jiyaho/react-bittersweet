@@ -57,8 +57,7 @@ app.post("/api/users/login", (req, res) => {
         res
           .cookie("x_auth", user.token) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
           .status(200) //성공한 경우
-          .json({ loginSuccess: true, userId: user._id })
-          .send(`${user.name}님 로그인을 환영합니다!`);
+          .json({ loginSuccess: true, userId: user._id });
       });
     });
   });
@@ -112,12 +111,30 @@ app.post("/api/posting", (req, res) => {
 //=====Get Posts=====
 app.get("/api/posting", (req, res) => {
   Posting.find((err, result) => {
-    // console.log(result);
-    // res.json(result);
     if (err) return res.json({ getPostsSuccess: false, err });
     return res.status(200).send(result);
   });
 });
+
+//=====Get a Post=====
+app.get("/api/posting/_id", (req, res) => {
+  Posting.findOne({ _id: req.posting._id }, (err, result) => {
+    if (err) return res.json({ getPostSuccess: false, err });
+    return res.status(200).send(result);
+  });
+});
+
+// app.get("/api/posting/:_id", (req, res) => {
+//   Posting.findOne({ _id: req.posting._id }, (err, result) => {
+//     if (err) return res.json({ getPostSuccess: false, err });
+//     return res.status(200).json({
+//       _id: req.posting._id,
+//       writer: req.posting.writer,
+//       title: req.posting.title,
+//       content: req.posting.content,
+//     });
+//   });
+// });
 
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

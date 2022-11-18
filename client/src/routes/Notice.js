@@ -2,20 +2,16 @@ import Nav from "components/Nav";
 import Footer from "components/Footer";
 import styles from "css/App.module.css";
 import FormOfNotice from "components/FormOfNotice";
-import noticeData from "data/noticeData.json";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import NoticeWrite from "./NoticeWrite";
 
 function Notice() {
-  const data = noticeData.data;
-  const [posts, setPosts] = useState("");
+  const [posts, setPosts] = useState([]);
 
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
       let post = response.data;
-      // console.log(`서버로부터: ${post}`);
       console.log(post);
       setPosts(post);
     });
@@ -52,15 +48,15 @@ function Notice() {
               <th>조회수</th>
             </tr>
           </thead>
-          {data.map((item) => {
+          {posts.map((item) => {
             return (
               <FormOfNotice
-                key={item.idx}
-                idx={item.idx}
+                key={item.id}
+                idx={item.id}
                 title={item.title}
                 date={item.date}
                 writer={item.writer}
-                view={item.view}
+                view="0"
               />
             );
           })}

@@ -41,7 +41,7 @@ function App() {
         <Route path="/store" element={<Store />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/notice" element={<Notice />} />
-        <Route path="/notice-detail/:idx" element={<NoticeDetail />} />
+        <Route path="/notice-detail/" element={<NoticeDetail />} />
         <Route path="/notice-write" element={<NoticeWrite />} />
       </Routes>
     </Router>

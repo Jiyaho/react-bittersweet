@@ -1,12 +1,13 @@
 import styles from "css/App.module.css";
 import PropTypes from "prop-types";
 
-function FormOfNoticeDetail({ header, content, date }) {
+function FormOfNoticeDetail({ header, writer, content, date }) {
   return (
     <section className={styles.noticeDetail}>
       <header>
         <ul>
           <li className={styles.detailHeader}>{header}</li>
+          <li className={styles.detailDate}>{writer}</li>
           <li className={styles.detailDate}>{date}</li>
         </ul>
       </header>
