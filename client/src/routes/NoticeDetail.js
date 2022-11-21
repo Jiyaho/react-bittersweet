@@ -2,14 +2,13 @@ import styles from "css/App.module.css";
 import Nav from "components/Nav";
 import Footer from "components/Footer";
 import FormOfNoticeDetail from "components/FormOfNoticeDetail";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function NoticeDetail() {
   const [posts, setPosts] = useState([]);
   const { _id } = useParams();
-  const navigate = useNavigate();
 
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
@@ -41,14 +40,6 @@ function NoticeDetail() {
           />
         );
       })}
-      <button
-        className={styles.detailBtn}
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        목록
-      </button>
       <Footer />
     </div>
   );

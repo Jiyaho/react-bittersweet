@@ -44,51 +44,16 @@ function NoticeWrite() {
     <div>
       <Nav />
       <h2 className={styles.page_title}>WRITE</h2>
-      <div className={styles.wrapNoticeWrite}>
-        <div>
-          <form onSubmit={onSubmit}>
-            <br />
-            <input
-              placeholder="이름을 입력해 주세요."
-              type="text"
-              required="required"
-              max="10"
-              className={styles.titleInput}
-              onChange={onWriterHandler}
-              name="writer"
-              value={writer}
-            ></input>
-            <input
-              placeholder="제목을 입력해 주세요."
-              type="text"
-              required="required"
-              max="10"
-              className={styles.titleInput}
-              onChange={onTilteHandler}
-              name="title"
-              value={title}
-            ></input>
-            <div className={styles.contentWrap}>
-              <textarea
-                cols="50"
-                rows="10"
-                placeholder="내용을 입력해 주세요."
-                onChange={onContentHandler}
-                name="content"
-                value={content}
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              required="required"
-              className={styles.postBtn}
-              onSubmit={onSubmit}
-            >
-              등록
-            </button>
-          </form>
-        </div>
-      </div>
+      <FormOfNoticeWrite
+        formOnSubmit={onSubmit}
+        writerOnchange={onWriterHandler}
+        writerValue={writer}
+        titleOnchange={onTilteHandler}
+        titleValue={title}
+        contentOnchange={onContentHandler}
+        contentValue={content}
+        buttonOnSubmit={onSubmit}
+      />
       <Footer />
     </div>
   );

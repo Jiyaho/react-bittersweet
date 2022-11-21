@@ -5,39 +5,40 @@ import FormOfNotice from "components/FormOfNotice";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { userPosting } from "_actions/user_action";
-import { useDispatch } from "react-redux";
+// import { userPosting } from "_actions/user_action";
+// import { useDispatch } from "react-redux";
 
 function Notice() {
-  const dispatch = useDispatch();
   const [posts, setPosts] = useState([]);
-  const [view, setView] = useState(0);
+  // const dispatch = useDispatch();
+  // const [view, setView] = useState(null);
 
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
-      let post = response.data;
+      let post = response.data.reverse();
       console.log(post);
       setPosts(post);
     });
   };
 
-  const getCounts = (e) => {
-    console.log(e.target.value);
-    const postingId = e.target.value;
-    posts.filter((item) => {
-      if (item._id === postingId) {
-        let body = { view: view };
-        // setView(view + 1);
-        dispatch(userPosting(body)).then((response) => {
-          if (response.payload.postSuccess) {
-            console.log("조회수 업데이트 성공!");
-          } else {
-            alert("조회수 업데이트 Error");
-          }
-        });
-      }
-    });
-  };
+  // const getCounts = (e) => {
+  //   console.log(e.target.value);
+  //   const postingId = e.target.value;
+  //   posts.filter((item) => {
+  //     if (item._id === postingId) {
+  //       item.view = view;
+  //       setView(view + 1);
+  //       let body = { view: view + 1 };
+  //       dispatch(userPosting(body)).then((response) => {
+  //         if (response.payload.postSuccess) {
+  //           return console.log("조회수 업데이트 성공!");
+  //         } else {
+  //           alert("조회수 업데이트 Error");
+  //         }
+  //       });
+  //     }
+  //   });
+  // };
 
   useEffect(() => {
     getPosts();
@@ -49,16 +50,15 @@ function Notice() {
       <h2 className={styles.page_title}>NOTICE</h2>
       <div>
         <Link to={`/notice-write`}>
-          <button className={styles.writeBtn}>WRITE</button>
+          <button className={styles.writeBtn}>📝 WRITE</button>
         </Link>
       </div>
       <div className={styles.noticeDiv}>
         <table className={styles.noticeTable}>
           <colgroup>
-            <col width="5%" />
-            <col width="50%" />
-            <col width="20%" />
-            <col width="18%" />
+            <col width="9%" />
+            <col width="55%" />
+            <col width="16%" />
             <col width="*" />
           </colgroup>
           <thead>
@@ -67,7 +67,6 @@ function Notice() {
               <th>제목</th>
               <th>작성자</th>
               <th>날짜</th>
-              <th>조회수</th>
             </tr>
           </thead>
           {posts.map((item) => {
@@ -78,11 +77,9 @@ function Notice() {
                 no={item.id}
                 title={item.title}
                 titleValue={item._id}
-                onClick={getCounts}
+                // onClick={getCounts}
                 date={item.date.substring(0, 10)}
                 writer={item.writer}
-                view={item.view}
-                viewValue={view}
               />
             );
           })}

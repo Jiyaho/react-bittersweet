@@ -11,6 +11,7 @@ import NoticeWrite from "routes/NoticeWrite";
 import LoginPage from "routes/LoginPage";
 import RegisterPage from "routes/RegisterPage";
 import Auth from "hoc/auth";
+import NoticeEdit from "routes/NoticeEdit";
 
 function App() {
   // =====페이지 접근 권한 설정=====
@@ -43,6 +44,7 @@ function App() {
         <Route path="/notice" element={<Notice />} />
         <Route path="/notice-detail/:_id" element={<NoticeDetail />} />
         <Route path="/notice-write" element={<NoticeWrite />} />
+        <Route path="/notice-edit/:_id" element={<NoticeEdit />} />
       </Routes>
     </Router>
   );

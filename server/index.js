@@ -116,5 +116,14 @@ app.get("/api/posting", (req, res) => {
   });
 });
 
+// ////=====Updated View=====
+// app.post("/api/posting", (req, res) => {
+//   const posting = new Posting(req.body.view);
+//   posting.save((err, userPosting) => {
+//     if (err) return res.json({ addViewSuccess: false, err });
+//     return res.status(200).json({ addViewSuccess: true });
+//   });
+// });
+
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

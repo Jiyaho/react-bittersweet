@@ -63,7 +63,7 @@
   font-size: 19px;
   padding: 8px 13px;
   cursor: pointer;
-  margin-right: -200px;
+  margin-right: -100px;
 }
 
 /* LoginPage */
@@ -322,7 +322,6 @@ h1 {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  
 }
 .menuCateBtnWrap button:hover {
   border-bottom: 5px solid var(--accent-color);
@@ -332,7 +331,7 @@ h1 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 73.7%;
+  width: 72.7%;
   margin: auto;
   list-style: none;
 }
@@ -346,8 +345,8 @@ h1 {
   width: 260px;
   height: 260px;
   overflow:hidden;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 13px;
+  margin-left: 13px;
 }
 .menu span {
   margin-top: -25px;
@@ -542,12 +541,12 @@ h1 {
 
 /* Notice.js */
 .writeBtn {
-  display: block;
-  width: 80px;
-  margin-left: 82%;
-  text-align: center;
-  font-size: 1.1em;
+  margin-left: 80%;
   margin-bottom: 30px;
+  font-size: 1.3em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .noticeTable {
   margin: auto;
@@ -556,7 +555,7 @@ h1 {
   text-align: center;
   border-left: none;
   border-right: none;
-  margin-bottom: 80px;
+  margin-bottom: 230px;
 }
 .noticeTable th, .noticeTable td {
   padding: 17px;
@@ -591,15 +590,15 @@ h1 {
   margin-top: 50px;
   list-style: none;
 }
-.detailHeader {
+.detailTitle  {
   font-size: 1.4em;
 }
 .detailWriter {
-  margin-left: 600px;
+  margin-left: 400px;
   font-size: 1.2em;
 }
 .detailDate {
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .noticeDetail p {
   width: 75%;
@@ -607,17 +606,27 @@ h1 {
   padding: 5px 20px 40px 20px;
   color: gray;
   border-bottom: 1px solid gray;
-  margin-bottom: 23px;
-}
-.detailBtn {
-  width: 95px;
-  height: 50px;
+  margin-bottom: 50px;
   font-size: 1.1em;
-  margin-left: 81.4%;
-  margin-bottom: 60px;
-  border-radius: 8px;
-  border: 1px solid gray;
+}
+.noticeDetailBtnWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
+  margin-bottom: 250px;
+}
+.noticeDetail button {
+  display: block;
+  width: 150px;
+  height: 50px;
+  margin-left: 15px;
+  font-size: 1.2em;
+  border: none;
   cursor: pointer;
+}
+.noticeDetail_updateBtn {
+  margin-right: 180px;
 }
 
 /* NoticeWrite.js */
@@ -773,7 +782,7 @@ textarea {
     position: absolute;
     font-size: 19px;
     top: 3px;
-    left: 365px;
+    left: 295px;
   }
   .navbar button:hover {
     background-color: transparent;
@@ -921,7 +930,6 @@ textarea {
   }
 
   /* media > menu */
-
   .menuCateBtnWrap button {
     width: 100px;
     height: 50px;
@@ -934,7 +942,7 @@ textarea {
     
   }
   .menuCateBtnWrap button:hover {
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid var(--accent-color);
     margin-bottom: -10px;
   }
   .menu ul {
@@ -1025,46 +1033,59 @@ textarea {
 
   /* media > notice */
   .writeBtn {
-    width: 70px;
-    margin-left: 83%;
-    font-size: 1em;
+    width: 90px;
+    margin-left: 77%;
+    font-size: 1.2em;
   }
   .noticeTable {
     width: 95%;
-    margin-bottom: 70px;
+    margin-bottom: 250px;
   }
   .noticeTable th, .noticeTable td {
-    padding: 7px;
+    padding: 17px 0px 17px 0px;
   }
 
   /* media > noticeDetail */
   .noticeDetail {
-    margin-bottom: 80px;
+    margin-bottom: 45px;
   }
   .noticeDetail ul {
     width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: auto;
-    border-top: 1px solid black;
-    padding: 10px 20px 10px 20px;
+    padding: 20px 20px 10px 20px;
     margin-bottom: 30px;
     margin-top: 50px;
-    list-style: none;
   }
-  .detailHeader {
+  .detailTitle {
     font-size: 1.2em;
+    margin-bottom: 13px;
+  }
+  .detailWriter {
+    margin-left: 0px;
   }
   .detailDate {
-    margin-top: 3px;
+    position: absolute;
+    top: 245px;
+    left: 365px;
+    font-size: 1em;
+    color: gray;
   }
   .noticeDetail p {
+    margin-top: -20px;
     width: 90%;
     margin: auto;
-    padding: 5px 15px 35px 15px;
+    padding: 10px 15px 40px 15px;
     color: gray;
     border-bottom: 1px solid gray;
+    margin-bottom: 45px;
+  }
+  .noticeDetailBtnWrap {
+    margin-left: 150px;
+    margin-bottom: 250px;
+  }
+  .noticeDetail button {
+    width: 100px;
+    height: 40px;
+    font-size: 1.1em;
   }
 }
 
