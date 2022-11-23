@@ -2,13 +2,14 @@ import styles from "css/App.module.css";
 import Nav from "components/Nav";
 import Footer from "components/Footer";
 import FormOfNoticeDetail from "components/FormOfNoticeDetail";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function NoticeDetail() {
   const [posts, setPosts] = useState([]);
   const { _id } = useParams();
+  const navigate = useNavigate();
 
   const getPosts = () => {
     axios.get("/api/posting").then((response) => {
@@ -20,6 +21,10 @@ function NoticeDetail() {
   const filteredNoticeDetail = posts.filter((item) => {
     return item._id === _id;
   });
+
+  const handleDelete = () => {
+    axios.delete(`/api/posting/${_id}`).then(navigate(-1));
+  };
 
   useEffect(() => {
     getPosts();
@@ -33,10 +38,12 @@ function NoticeDetail() {
         return (
           <FormOfNoticeDetail
             key={item.id}
+            _id={item._id}
             title={item.title}
             date={item.date.substring(0, 10)}
             writer={item.writer}
             content={item.content}
+            deleteOnClick={handleDelete}
           />
         );
       })}

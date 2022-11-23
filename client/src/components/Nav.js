@@ -26,8 +26,9 @@ function Nav() {
   };
 
   const getUserName = () => {
-    axios.get("/api/users/username").then((response) => {
+    axios.get("/api/users").then((response) => {
       let user = response.data;
+      console.log(user);
       if (user.toString().includes("object")) {
         setIsLogin(true);
         setLogInUserName("🔐LOG-IN");

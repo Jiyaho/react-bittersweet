@@ -56,9 +56,9 @@ function Notice() {
       <div className={styles.noticeDiv}>
         <table className={styles.noticeTable}>
           <colgroup>
-            <col width="9%" />
-            <col width="55%" />
-            <col width="16%" />
+            <col width="8%" />
+            <col width="49%" />
+            <col width="24%" />
             <col width="*" />
           </colgroup>
           <thead>

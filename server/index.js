@@ -91,20 +91,20 @@ app.get("/api/users/logout", auth, (req, res) => {
   });
 });
 
-//=====Get User Name=====
-app.get("/api/users/username", auth, (req, res) => {
-  User.findById({ _id: req.user._id }, (err, user) => {
+//=====Get a User Name=====
+app.get("/api/users", auth, (req, res) => {
+  User.findById({ _id: req.user._id }, (err, result) => {
     if (err) return res.json({ success: false, err });
-    return res.status(200).send(req.user.name);
+    return res.status(200).json(req.user.name);
   });
 });
 
 //=====Posting=====
 app.post("/api/posting", (req, res) => {
   const posting = new Posting(req.body);
-  posting.save((err, userPosting) => {
+  posting.save((err, result) => {
     if (err) return res.json({ postSuccess: false, err });
-    return res.status(200).json({ postSuccess: true });
+    return res.status(200).json({ postSuccess: true, result });
   });
 });
 
@@ -116,14 +116,39 @@ app.get("/api/posting", (req, res) => {
   });
 });
 
-// ////=====Updated View=====
-// app.post("/api/posting", (req, res) => {
-//   const posting = new Posting(req.body.view);
-//   posting.save((err, userPosting) => {
-//     if (err) return res.json({ addViewSuccess: false, err });
-//     return res.status(200).json({ addViewSuccess: true });
-//   });
+//=====Update a Post=====
+app.patch("/api/posting/:_id", (req, res) => {
+  Posting.findByIdAndUpdate(
+    { _id: req.params._id },
+    req.body,
+    (err, result) => {
+      if (err) return res.json({ editSuccess: false, err });
+      return res.status(200).json({ editSuccess: true, result });
+    }
+  );
+});
+
+// app.patch("/api/posting/:_id", (req, res, next) => {
+//   Posting.findByIdAndUpdate(
+//     { _id: req.params._id },
+//     req.body
+//       .then((result) => {
+//         res.json(result);
+//       })
+//       .catch((err) => {
+//         console.error(err);
+//         next(err);
+//       })
+//   );
 // });
+
+//=====Delete a Post=====
+app.delete("/api/posting/:_id", (req, res) => {
+  Posting.findByIdAndDelete({ _id: req.params._id }, (err, result) => {
+    if (err) return res.json({ deleteSuccess: false, err });
+    return res.status(200).json({ deleteSuccess: true, result });
+  });
+});
 
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

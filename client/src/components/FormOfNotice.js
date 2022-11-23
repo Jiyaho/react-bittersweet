@@ -7,7 +7,7 @@ function FormOfNotice({ _id, no, title, titleValue, onClick, date, writer }) {
     <tbody>
       <tr>
         <td>{no}</td>
-        <td className={styles.td_content}>
+        <td className={styles.notice_title}>
           <Link
             to={`/notice-detail/${_id}`}
             onClick={onClick}

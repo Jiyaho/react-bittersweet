@@ -40,19 +40,31 @@ function NoticeWrite() {
     });
   };
 
+  const onClickCancle = () => {
+    if (window.confirm("등록을 취소 하시겠습니까?") == true) {
+      navigate("/notice");
+    } else {
+      return;
+    }
+  };
+
   return (
     <div>
       <Nav />
       <h2 className={styles.page_title}>WRITE</h2>
       <FormOfNoticeWrite
         formOnSubmit={onSubmit}
+        writerPlaceholder="이름을 입력해 주세요"
         writerOnchange={onWriterHandler}
         writerValue={writer}
+        titlePlaceholder="제목을 입력해 주세요."
         titleOnchange={onTilteHandler}
         titleValue={title}
+        contentPlaceholder="내용을 입력해 주세요."
         contentOnchange={onContentHandler}
         contentValue={content}
         buttonOnSubmit={onSubmit}
+        cancleBtnOnClick={onClickCancle}
       />
       <Footer />
     </div>

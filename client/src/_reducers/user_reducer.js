@@ -3,6 +3,7 @@ import {
   REGISTER_USER,
   AUTH_USER,
   USER_POSTING,
+  USER_EDITING,
 } from "_actions/types";
 
 export default function (state = {}, action) {

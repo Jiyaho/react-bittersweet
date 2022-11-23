@@ -2,7 +2,14 @@ import styles from "css/App.module.css";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-function FormOfNoticeDetail({ title, writer, content, date }) {
+function FormOfNoticeDetail({
+  title,
+  writer,
+  content,
+  date,
+  _id,
+  deleteOnClick,
+}) {
   const navigate = useNavigate();
 
   return (
@@ -28,11 +35,12 @@ function FormOfNoticeDetail({ title, writer, content, date }) {
         <button
           className={styles.noticeDetail_updateBtn}
           onClick={() => {
-            navigate(-1);
+            navigate(`/notice-edit/${_id}`);
           }}
         >
           수정
         </button>
+        <button onClick={deleteOnClick}>삭제</button>
       </div>
     </section>
   );

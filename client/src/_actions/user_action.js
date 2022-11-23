@@ -1,5 +1,11 @@
 import axios from "axios";
-import { LOGIN_USER, REGISTER_USER, AUTH_USER, USER_POSTING } from "./types";
+import {
+  LOGIN_USER,
+  REGISTER_USER,
+  AUTH_USER,
+  USER_POSTING,
+  USER_EDITING,
+} from "./types";
 
 export function loginUser(dataToSubmit) {
   //dataToSubmit은 LoginPage의 body(이메일, 패스워드)를 parameter로 받는 것임.

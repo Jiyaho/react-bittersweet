@@ -2,13 +2,18 @@ import styles from "css/App.module.css";
 
 function FormOfNoticeWrite({
   formOnSubmit,
+  writerPlaceholder,
   writerOnchange,
   writerValue,
+  titlePlaceholder,
   titleOnchange,
   titleValue,
+  contentPlaceholder,
   contentOnchange,
   contentValue,
   buttonOnSubmit,
+  cancleBtnOnClick,
+  submitBtnValue,
 }) {
   return (
     <div className={styles.wrapNoticeWrite}>
@@ -16,7 +21,7 @@ function FormOfNoticeWrite({
         <form onSubmit={formOnSubmit}>
           <br />
           <input
-            placeholder="이름을 입력해 주세요."
+            placeholder={writerPlaceholder}
             type="text"
             required="required"
             max="10"
@@ -25,7 +30,7 @@ function FormOfNoticeWrite({
             value={writerValue}
           ></input>
           <input
-            placeholder="제목을 입력해 주세요."
+            placeholder={titlePlaceholder}
             type="text"
             required="required"
             max="10"
@@ -37,19 +42,24 @@ function FormOfNoticeWrite({
             <textarea
               cols="50"
               rows="10"
-              placeholder="내용을 입력해 주세요."
+              placeholder={contentPlaceholder}
               onChange={contentOnchange}
               value={contentValue}
             ></textarea>
           </div>
-          <button
-            type="submit"
-            required="required"
-            className={styles.postBtn}
-            onSubmit={buttonOnSubmit}
-          >
-            등록
-          </button>
+          <div className={styles.noticeWriteBtnWrap}>
+            <button className={styles.postCancleBtn} onClick={cancleBtnOnClick}>
+              취소
+            </button>
+            <button
+              type="submit"
+              className={styles.postBtn}
+              onSubmit={buttonOnSubmit}
+              value={submitBtnValue}
+            >
+              등록
+            </button>
+          </div>
         </form>
       </div>
     </div>
