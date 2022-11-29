@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "routes/Home";
-import AboutUs from "routes/AboutUs";
-import Menu from "routes/Menu";
-import Faq from "routes/Faq";
-import MenuDetail from "routes/MenuDetail";
-import Store from "routes/Store";
-import Notice from "routes/Notice";
-import NoticeDetail from "routes/NoticeDetail";
-import NoticeWrite from "routes/NoticeWrite";
+import Home from "routes/home/Home";
+import AboutUs from "routes/aboutUs/AboutUs";
+import Menu from "routes/menu/Menu";
+import Faq from "routes/faq/Faq";
+import MenuDetail from "routes/menu/MenuDetail";
+import Store from "routes/store/Store";
+import Notice from "routes/whatsNew/Notice";
+import NoticeDetail from "routes/whatsNew/NoticeDetail";
+import NoticeWrite from "routes/whatsNew/NoticeWrite";
 import LoginPage from "routes/LoginPage";
 import RegisterPage from "routes/RegisterPage";
 import Auth from "hoc/auth";
-import NoticeEdit from "routes/NoticeEdit";
+import NoticeEdit from "routes/whatsNew/NoticeEdit";
 
 function App() {
   // =====페이지 접근 권한 설정=====

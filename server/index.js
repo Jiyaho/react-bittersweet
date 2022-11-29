@@ -128,20 +128,6 @@ app.patch("/api/posting/:_id", (req, res) => {
   );
 });
 
-// app.patch("/api/posting/:_id", (req, res, next) => {
-//   Posting.findByIdAndUpdate(
-//     { _id: req.params._id },
-//     req.body
-//       .then((result) => {
-//         res.json(result);
-//       })
-//       .catch((err) => {
-//         console.error(err);
-//         next(err);
-//       })
-//   );
-// });
-
 //=====Delete a Post=====
 app.delete("/api/posting/:_id", (req, res) => {
   Posting.findByIdAndDelete({ _id: req.params._id }, (err, result) => {
