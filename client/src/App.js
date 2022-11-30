@@ -2,9 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "routes/home/Home";
 import AboutUs from "routes/aboutUs/AboutUs";
 import Menu from "routes/menu/Menu";
-import Faq from "routes/faq/Faq";
 import MenuDetail from "routes/menu/MenuDetail";
+import Menu_Beverage from "routes/menu/Menu_Beverage";
+import Menu_Coffee from "routes/menu/Menu_Coffee";
+import Menu_Tea from "routes/menu/Menu_Tea";
 import Store from "routes/store/Store";
+import Faq from "routes/faq/Faq";
 import Notice from "routes/whatsNew/Notice";
 import NoticeDetail from "routes/whatsNew/NoticeDetail";
 import NoticeWrite from "routes/whatsNew/NoticeWrite";
@@ -39,6 +42,9 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/menu-detail/:idx" element={<MenuDetail />} />
+        <Route path="/menu/coffee" element={<Menu_Coffee />} />
+        <Route path="/menu/beverage" element={<Menu_Beverage />} />
+        <Route path="/menu/tea" element={<Menu_Tea />} />
         <Route path="/store" element={<Store />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/notice" element={<Notice />} />

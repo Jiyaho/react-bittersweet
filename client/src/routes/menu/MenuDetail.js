@@ -28,7 +28,8 @@ function MenuDetail() {
         return (
           <FormOfMenuDetail
             key={data.idx}
-            menuCate={data.category[1]}
+            cateBtn={data.category[1]}
+            cateBtnLinkTo={`/menu/${data.category[1]}`}
             currentMenu={data.name_ko}
             temperature={
               data.temperature === "HOT"

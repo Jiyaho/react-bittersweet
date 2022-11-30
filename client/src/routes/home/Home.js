@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDroplet } from "@fortawesome/free-solid-svg-icons";
 import useScrollFadeIn from "hooks/useScrollFadeIn";
 import ScrollBtn from "components/ScrollBtn";
+import { Link } from "react-router-dom";
 
 function Home() {
   const animatedItem = useScrollFadeIn();
@@ -33,7 +34,9 @@ function Home() {
       <div className={styles.article3}>
         <FontAwesomeIcon icon={faDroplet} className={styles.article3_i} />
         <span>가까이 있는 Bittersweet 매장을 찾아보세요.</span>
-        <button>Find a Store</button>
+        <Link to={`/store`}>
+          <button>Find a Store</button>
+        </Link>
       </div>
       <Footer />
     </div>

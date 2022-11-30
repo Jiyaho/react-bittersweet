@@ -9,9 +9,15 @@ import ScrollBtn from "components/ScrollBtn";
 function AboutUs() {
   const scrollToBrandPrinciple = () => {
     window.scrollTo({ top: 700, behavior: "smooth" });
+    if (window.innerWidth < 768) {
+      window.scrollTo({ top: 500, behavior: "smooth" });
+    }
   };
   const scrollToCoffee = () => {
     window.scrollTo({ top: 1700, behavior: "smooth" });
+    if (window.innerWidth < 768) {
+      window.scrollTo({ top: 1250, behavior: "smooth" });
+    }
   };
   return (
     <div>

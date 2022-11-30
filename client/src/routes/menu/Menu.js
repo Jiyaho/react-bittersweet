@@ -5,40 +5,38 @@ import FormOfMenu from "components/menu/FormOfMenu";
 import menuData from "data/menuData.json";
 import { useEffect, useState } from "react";
 import ScrollBtn from "components/ScrollBtn";
+import { useNavigate } from "react-router-dom";
 
 function Menu() {
   const [filteredCategory, setFilteredCategory] = useState(null);
   const menuDatas = menuData.data;
+  const navigate = useNavigate();
   const buttons = [
     {
       name: "ALL",
-      value: "ALL",
+      value: "all",
     },
     {
       name: "COFFEE",
-      value: "COFFEE",
+      value: "coffee",
     },
     {
       name: "BEVERAGE",
-      value: "BEVERAGE",
+      value: "beverage",
     },
     {
       name: "TEA",
-      value: "TEA",
+      value: "tea",
     },
   ];
 
-  function filterMenu(cate) {
-    let filteredMenu = menuDatas.filter((menu) => menu.category.includes(cate));
-    return filteredMenu;
-  }
-
   function handleCate(e) {
     let clickedBtn = e.target.value;
-    console.log(clickedBtn);
-    clickedBtn.includes("ALL")
-      ? setFilteredCategory(menuDatas)
-      : setFilteredCategory(filterMenu(clickedBtn));
+    if (clickedBtn.includes("all")) {
+      navigate("/menu");
+    } else {
+      navigate(`/menu/${clickedBtn}`);
+    }
   }
 
   useEffect(() => {
@@ -56,8 +54,8 @@ function Menu() {
             <button
               className={styles.cateBtn}
               key={idx}
-              onClick={handleCate}
               value={btn.value}
+              onClick={handleCate}
             >
               {btn.name}
             </button>
