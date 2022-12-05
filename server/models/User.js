@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+
 const saltRounds = 10; //10자리 소스로 salt 생성
 const jwt = require("jsonwebtoken");
 
