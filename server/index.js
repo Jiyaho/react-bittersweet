@@ -138,4 +138,3 @@ app.delete("/api/posting/:_id", (req, res) => {
 
 const port = 5000;
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-client = MongoClient("mongodb://test:test@localhost", 27017);
