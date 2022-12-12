@@ -5,6 +5,15 @@ const cookieParser = require("cookie-parser");
 const { User } = require("./models/User");
 const { auth } = require("./middleware/auth");
 const { Posting } = require("./models/Posting");
+const cors = require("cors");
+
+//CORS ISSUE
+const clientURL = ["https://bittersweet.tk", "https://www.bittersweet.tk"];
+let corsOption = {
+  origin: clientURL,
+  credentials: true,
+};
+app.use(cors(corsOption));
 
 app.use(express.json());
 //"application/json" 형식의 데이터를 parse해 줌
@@ -13,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.get("/", (req, res) => res.send("Hello World!!!"));
+app.get("/", (req, res) => res.send("Hello World!! checked!"));
 
 const mongoose = require("mongoose");
 mongoose

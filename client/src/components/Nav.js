@@ -16,27 +16,35 @@ function Nav() {
   };
 
   const onClickHandler = () => {
-    axios.get("/api/users/logout").then((response) => {
-      if (response.data.success) {
-        navigate("/");
-        alert("로그아웃 하였습니다.");
-        setIsLogin(true);
-      }
-    });
+    axios
+      .get(`${process.env.REACT_APP_HOST}/api/users/logout`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        if (response.data.success) {
+          navigate("/");
+          alert("로그아웃 하였습니다.");
+          setIsLogin(true);
+        }
+      });
   };
 
   const getUserName = () => {
-    axios.get("/api/users").then((response) => {
-      let user = response.data;
-      console.log(user);
-      if (user.toString().includes("object")) {
-        setIsLogin(true);
-        setLogInUserName("🔐LOG-IN");
-      } else {
-        setIsLogin(false);
-        // setLogInUserName(`${user}님 🔓LOG-OUT`);
-      }
-    });
+    axios
+      .get(`${process.env.REACT_APP_HOST}/api/users`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        let user = response.data;
+        console.log(user);
+        if (user.toString().includes("object")) {
+          setIsLogin(true);
+          setLogInUserName("🔐LOG-IN");
+        } else {
+          setIsLogin(false);
+          // setLogInUserName(`${user}님 🔓LOG-OUT`);
+        }
+      });
   };
 
   useEffect(() => {
@@ -48,7 +56,7 @@ function Nav() {
       <div>
         <FontAwesomeIcon icon={faDroplet} className={styles.navbar_svg} />
         <span className={styles.navbar_logo}>
-          <Link to={`/`}>Bittersweet</Link>
+          <Link to={`/`}>Bittersweet Korea</Link>
         </span>
       </div>
       <ul

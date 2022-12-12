@@ -41,7 +41,7 @@ function NoticeWrite() {
   };
 
   const onClickCancle = () => {
-    if (window.confirm("등록을 취소 하시겠습니까?") == true) {
+    if (window.confirm("등록을 취소 하시겠습니까?") === true) {
       navigate("/notice");
     } else {
       return;

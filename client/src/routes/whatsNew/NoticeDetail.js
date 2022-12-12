@@ -12,7 +12,7 @@ function NoticeDetail() {
   const navigate = useNavigate();
 
   const getPosts = () => {
-    axios.get("/api/posting").then((response) => {
+    axios.get(`${process.env.REACT_APP_HOST}/api/posting`).then((response) => {
       let post = response.data;
       setPosts(post);
     });
@@ -23,7 +23,9 @@ function NoticeDetail() {
   });
 
   const handleDelete = () => {
-    axios.delete(`/api/posting/${_id}`).then(navigate(-1));
+    axios
+      .delete(`${process.env.REACT_APP_HOST}/api/posting/${_id}`)
+      .then(navigate(-1));
   };
 
   useEffect(() => {

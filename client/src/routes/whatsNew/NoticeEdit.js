@@ -15,7 +15,7 @@ function NoticeEdit() {
   const [content, setContent] = useState("");
 
   const getPosts = () => {
-    axios.get("/api/posting").then((response) => {
+    axios.get(`${process.env.REACT_APP_HOST}/api/posting`).then((response) => {
       let post = response.data;
       setPosts(post);
     });
@@ -43,7 +43,7 @@ function NoticeEdit() {
       content: content,
     };
     const request = axios
-      .patch(`/api/posting/${_id}`, body)
+      .patch(`${process.env.REACT_APP_HOST}/api/posting/${_id}`, body)
       .then((response) => response.data);
     alert("수정 완료!");
     navigate("/notice");
@@ -55,7 +55,7 @@ function NoticeEdit() {
   };
 
   const onClickCancle = () => {
-    if (window.confirm("등록을 취소 하시겠습니까?") == true) {
+    if (window.confirm("등록을 취소 하시겠습니까?") === true) {
       navigate("/notice");
     } else {
       return;

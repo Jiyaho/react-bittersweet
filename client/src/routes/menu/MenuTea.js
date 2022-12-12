@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import ScrollBtn from "components/ScrollBtn";
 import { useNavigate } from "react-router-dom";
 
-function Menu_Coffee() {
+function MenuTea() {
   const menuDatas = menuData.data;
   const [filteredCategory, setFilteredCategory] = useState([]);
   const navigate = useNavigate();
@@ -45,7 +45,7 @@ function Menu_Coffee() {
   };
 
   const getMenus = () => {
-    setFilteredCategory(filterMenu("COFFEE"));
+    setFilteredCategory(filterMenu("TEA"));
   };
 
   useEffect(() => {
@@ -93,4 +93,4 @@ function Menu_Coffee() {
   );
 }
 
-export default Menu_Coffee;
+export default MenuTea;

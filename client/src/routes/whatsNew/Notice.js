@@ -11,7 +11,7 @@ function Notice() {
   const [posts, setPosts] = useState([]);
 
   const getPosts = () => {
-    axios.get("/api/posting").then((response) => {
+    axios.get(`${process.env.REACT_APP_HOST}/api/posting`).then((response) => {
       let post = response.data.reverse();
       console.log(post);
       setPosts(post);
