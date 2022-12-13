@@ -9,11 +9,18 @@ const cors = require("cors");
 
 //CORS ISSUE
 const clientURL = ["https://bittersweet.tk", "https://www.bittersweet.tk"];
-let corsOption = {
-  origin: clientURL,
+let corsOptions = {
+  origin: function (origin, callback) {
+    if (clientURL.indexOf(origin) !== -1) {
+      //URL배열에 origin 인자가 있을 경우
+      callback(null, true); //cors 허용
+    } else {
+      callback(new Error("Not allowed by CORS")); //cors 비허용
+    }
+  },
   credentials: true,
 };
-app.use(cors(corsOption));
+app.use(cors(corsOptions));
 
 app.use(express.json());
 //"application/json" 형식의 데이터를 parse해 줌

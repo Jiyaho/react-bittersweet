@@ -86,7 +86,7 @@ function Faq() {
       <input
         className={styles.faq_input}
         value={userInput}
-        placeholder="검색할 내용을 입력해 주세요."
+        placeholder="🔍 검색할 내용을 입력해 주세요."
         onChange={inputChange}
       ></input>
       <div className={styles.question_container}>
