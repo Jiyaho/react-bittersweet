@@ -8,16 +8,23 @@ const { Posting } = require("./models/Posting");
 const cors = require("cors");
 
 //CORS ISSUE
-const clientURL = ["https://bittersweet.tk", "https://www.bittersweet.tk"];
+// const clientURL = [
+//   "https://bittersweet.tk",
+//   "https://www.bittersweet.tk",
+// ];
+// let corsOptions = {
+//   origin: function (origin, callback) {
+//     if (clientURL.indexOf(origin) !== -1) {
+//       //URL배열에 origin 인자가 있을 경우
+//       callback(null, true); //cors 허용
+//     } else {
+//       callback(new Error("Not allowed by CORS")); //cors 비허용
+//     }
+//   },
+//   credentials: true,
+// };
 let corsOptions = {
-  origin: function (origin, callback) {
-    if (clientURL.indexOf(origin) !== -1) {
-      //URL배열에 origin 인자가 있을 경우
-      callback(null, true); //cors 허용
-    } else {
-      callback(new Error("Not allowed by CORS")); //cors 비허용
-    }
-  },
+  origin: "https://bittersweet.tk",
   credentials: true,
 };
 app.use(cors(corsOptions));
