@@ -53,7 +53,7 @@ function Nav() {
 
   return (
     <div className={styles.navbar}>
-      <div>
+      <div className={styles.navbar_titleLogoWrap}>
         <FontAwesomeIcon icon={faDroplet} className={styles.navbar_svg} />
         <span className={styles.navbar_logo}>
           <Link to={`/`}>Bittersweet Korea</Link>

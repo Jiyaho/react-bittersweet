@@ -35,7 +35,7 @@ function Home() {
         <FontAwesomeIcon icon={faDroplet} className={styles.article3_i} />
         <span>가까이 있는 Bittersweet 매장을 찾아보세요.</span>
         <Link to={`/store`}>
-          <button>🔍 Find a Store</button>
+          <button>🔍 매장 검색하기</button>
         </Link>
       </div>
       <Footer />

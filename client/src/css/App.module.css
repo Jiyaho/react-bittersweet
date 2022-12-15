@@ -87,7 +87,8 @@
   align-items: center;
   width: 100%;
   height: 55vh;
-  margin-bottom: 140px;
+  margin-bottom: 160px;
+  margin-top: -20px;
 }
 .LoginPageWrap form {
   display: flex;
@@ -821,7 +822,7 @@ textarea {
     opacity: 0;
   }
   to {
-    left: 120px;
+    left: 80px;
     opacity: 1;
   }
 }
@@ -866,11 +867,17 @@ textarea {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px 15px;
-    margin-bottom: -2px;
+    padding: 17px 5px 40px 20px;
+  }
+  .navbar_titleLogoWrap {
+    position: absolute;
+    top: 17px;
   }
   .navbar_logo {
-    font-size: 1.3em;
+    font-size: 17px;
+  }
+  .navbar_svg {
+    font-size: 22px;
   }
   .navbar_menu {
     display: none;
@@ -882,7 +889,7 @@ textarea {
   .navbar_toggleBtn {
     display: block;
     right: 20px;
-    top: 11px;
+    top: 17px;
   }
   .navbar_menuToggle {
     display: flex;
@@ -891,7 +898,8 @@ textarea {
     width: 100%;
     list-style: none;
     padding-left: 0;
-    margin-top: 10px;
+    margin-top: 40px;
+    margin-bottom: -30px;
   }
   .navbar_menuToggle li {
     padding: 8px 20px;
@@ -907,9 +915,11 @@ textarea {
   .navbar button {
     display: flex;
     position: absolute;
-    font-size: 17px;
-    top: 5px;
+    font-size: 15px;
+    top: 18px;
     left: 233px;
+    text-align: center;
+    padding: 0px
   }
   .navbar_loginToggle {
     display: flex;
@@ -925,7 +935,7 @@ textarea {
     width: 100%;
     height: 100%;
     background-color: rgb(55, 31, 1);
-    padding-top: 1px;
+    padding-top: 0.2px;
     font-size: 0.8em;
     margin-top: -138px;
 
@@ -964,22 +974,22 @@ textarea {
     font-family: sans-serif;
     position: relative;
     top: 95px;
-    left: 120px;
+    left: 80px;
     animation: slide-leftToRight_m 1s ease-out;
     margin-bottom: 20px;
   }
   .new_menu ul {
     position: relative;
-    font-size: 0.7em;
+    font-size: 0.65em;
     top: 80px;
-    left: 120px;
+    left: 80px;
     animation: slide-leftToRight_m 1s ease-out;
   }
   .new_menu li {
     margin-bottom: -3px;
   }
   .new_menu img {
-    margin-top: -130px;
+    margin-top: -129px;
   }
   .article2_p {
     position: absolute;
@@ -991,9 +1001,10 @@ textarea {
     opacity: 1;
   }
   .article3 {
-    margin-top: -2.5px;
+    margin-top: -2.6px;
+    margin-bottom: 0px;
     width: 100%;
-    height: 180px;
+    height: 190px;
     background-color: orange;
     display: flex;
     justify-content: center;
@@ -1013,9 +1024,9 @@ textarea {
   }
   .article3 button {
     margin-top: 110px;
-    width: 120px;
+    width: 105px;
     height: 26px;
-    font-size: 0.9em;
+    font-size: 0.8em;
     left: 150px;
   }
 
@@ -1025,7 +1036,7 @@ textarea {
   }
   .about_nav button {
     width: 140px;
-    font-size: 1em;
+    font-size: 0.85em;
     color: black;
   }
   .about_nav li {
@@ -1067,7 +1078,7 @@ textarea {
     width: 85%;
   }
   .about_article3 {
-    font-size: 0.85em;
+    font-size: 0.84em;
     padding-top: 50px;
     padding-bottom: 60px;
   }
@@ -1081,15 +1092,14 @@ textarea {
     list-style: none;
   }
   .coffeeBean1 {
-    margin:auto;
-    width: 340px;
-    margin: 45px 0px 10px -15px;
+    width: 410px;
+    margin: 40px 0px 10px -47px;
   }
   .coffeeBean2,
   .coffeeBean3,
   .coffeeBean4 {
-    width: 340px;
-    margin: 10px 0px 10px -15px;
+    width: 410px;
+    margin: 10px 0px 10px -47px;
   }
   .about_article3_2,
   .about_article3_3,
@@ -1113,16 +1123,22 @@ textarea {
 
   /* media > menu */
   .menuCateBtnWrap button {
-    width: 65px;
+    width: 100px;
     height: 50px;
-    font-size: 1.2em;
+    font-size: 1.0em;
     border: none;
     cursor: pointer;
     color: black;
+    margin-right: -5px;
+    margin-left: -5px;
   }
   .menuCateBtnWrap button:hover {
     border-bottom: 5px solid var(--accent-color);
     margin-bottom: -10px;
+  }
+  .menu_div {
+    margin: auto;
+    margin-top: -45px;
   }
   .menu ul {
     width: 100%;
@@ -1144,17 +1160,16 @@ textarea {
     margin: auto;
   }
   .menu img {
-    margin: 0px 5px 0px 5px;
-    width: 185px;
-    height: 195px;
+    width: 180px;
+    height: 190px;
 
   }
   .menu img:hover {
     transform: none;
   }
   .menu span {
-    margin-top: -50px;
-    margin-bottom: 35px;
+    margin-top: -40px;
+    margin-bottom: 45px;
   }
 
   /* media > menuDetail */
@@ -1178,8 +1193,12 @@ textarea {
   .detail_article1 ul {
     width: 100%;
   }
+  .menuName_ko {
+    font-size: 2em;
+  }
   .menuDesc {
     margin-bottom: -20px;
+    font-size: 1em;
   }
   .detail_article1 img {
     width: 100%;
@@ -1209,7 +1228,7 @@ textarea {
     width: 95%;
   }
   .question button {
-    height: 70px;
+    height: 50px;
     padding: 0px 10px 0px 15px;
   }
   .question span {
@@ -1222,7 +1241,7 @@ textarea {
   }
   .answer_p_toggle {
     padding: 15px 8px 5px 16px;
-    height: 65px;
+    height: 60px;
   }
 
   /* media > notice */
@@ -1255,18 +1274,17 @@ textarea {
     margin-top: 50px;
   }
   .detailTitle {
-    width: 59%;
+    width: 58%;
     font-size: 0.9em;
   }
   .detailWriter {
-    /* text-align: center; */
     width: 22%;
     font-size: 0.9em;
   }
   .detailDate {
-    width: 19%;
+    width: 20%;
     margin-left: -20px;
-    font-size: 0.8em;
+    font-size: 0.7em;
   }
   .noticeDetail p {
     margin-top: -20px;
