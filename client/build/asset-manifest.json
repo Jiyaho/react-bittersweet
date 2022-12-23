@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c7ca37d1.css",
-    "main.js": "/static/js/main.61fc9400.js",
+    "main.js": "/static/js/main.a121d482.js",
     "static/media/iced-americano1.jpg": "/static/media/iced-americano1.f356801517e0bcf85535.jpg",
     "static/media/coffee-bean02.jpg": "/static/media/coffee-bean02.82ec3e19fe2576995434.jpg",
     "static/media/iced-americano.jpg": "/static/media/iced-americano.ccd2588edbff069a4531.jpg",
@@ -18,10 +18,10 @@
     "index.html": "/index.html",
     "static/media/logo.svg": "/static/media/logo.38e9265452bf155a5912.svg",
     "main.c7ca37d1.css.map": "/static/css/main.c7ca37d1.css.map",
-    "main.61fc9400.js.map": "/static/js/main.61fc9400.js.map"
+    "main.a121d482.js.map": "/static/js/main.a121d482.js.map"
   },
   "entrypoints": [
     "static/css/main.c7ca37d1.css",
-    "static/js/main.61fc9400.js"
+    "static/js/main.a121d482.js"
   ]
 }

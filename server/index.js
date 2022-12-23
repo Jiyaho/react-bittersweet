@@ -6,25 +6,39 @@ const { User } = require("./models/User");
 const { auth } = require("./middleware/auth");
 const { Posting } = require("./models/Posting");
 const cors = require("cors");
+const https = require("https");
+const fs = require("fs");
+const httpPort = 5000;
+const httpsPort = 8080;
+
+if (process.env.NODE_ENV === "production") {
+  //Encrypt key
+  const option = {
+    ca: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/fullchain.pem"),
+    key: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/privkey.pem"),
+    cert: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/cert.pem"),
+  };
+  https.createServer(option, app).listen(httpsPort, () => {
+    console.log("https 서버 실행 성공 포트 :: " + httpsPort);
+  }); //https서버를 만드는 부분
+  app.listen(httpPort, () => {
+    console.log("http 서버 실행 성공 포트 :: " + httpPort);
+  }); //http서버
+} else {
+  app.listen(httpPort, () => {
+    console.log("http 서버 실행 성공 포트 :: " + httpPort);
+  }); //http서버
+}
+
+app.get("/", (req, res) => res.send("test world!!"));
 
 //CORS ISSUE
-// const clientURL = [
-//   "https://bittersweet.tk",
-//   "https://www.bittersweet.tk",
-// ];
-// let corsOptions = {
-//   origin: function (origin, callback) {
-//     if (clientURL.indexOf(origin) !== -1) {
-//       //URL배열에 origin 인자가 있을 경우
-//       callback(null, true); //cors 허용
-//     } else {
-//       callback(new Error("Not allowed by CORS")); //cors 비허용
-//     }
-//   },
-//   credentials: true,
-// };
 let corsOptions = {
-  origin: "https://bittersweet.tk",
+  origin: [
+    "http://localhost:3000",
+    "https://bittersweet.ml",
+    "https://www.bittersweet.ml",
+  ],
   credentials: true,
 };
 app.use(cors(corsOptions));
@@ -40,6 +54,7 @@ app.get("/", (req, res) => res.send("Hello World!! checked!"));
 
 const mongoose = require("mongoose");
 mongoose
+  .set("strictQuery", false)
   .connect(config.mongoURI)
   .then(() => console.log("mongoDB Connected.."))
   .catch((err) => console.log(err));
@@ -158,6 +173,3 @@ app.delete("/api/posting/:_id", (req, res) => {
     return res.status(200).json({ deleteSuccess: true, result });
   });
 });
-
-const port = 5000;
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
