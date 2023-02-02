@@ -12,25 +12,27 @@ const httpPort = 5000;
 const httpsPort = 8080;
 
 if (process.env.NODE_ENV === "production") {
+  //배포(prod.)환경일 때의 설정
   //Encrypt key
   const option = {
     ca: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/fullchain.pem"),
     key: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/privkey.pem"),
     cert: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/cert.pem"),
   };
+  //https서버를 만드는 부분
   https.createServer(option, app).listen(httpsPort, () => {
     console.log("https 서버 실행 성공 포트 :: " + httpsPort);
-  }); //https서버를 만드는 부분
+  });
+  //http서버
   app.listen(httpPort, () => {
     console.log("http 서버 실행 성공 포트 :: " + httpPort);
-  }); //http서버
+  });
 } else {
+  //개발(dev.)환경일 때의 설정
   app.listen(httpPort, () => {
     console.log("http 서버 실행 성공 포트 :: " + httpPort);
-  }); //http서버
+  });
 }
-
-app.get("/", (req, res) => res.send("test world!!"));
 
 //CORS ISSUE
 let corsOptions = {
@@ -53,11 +55,18 @@ app.use(cookieParser());
 app.get("/", (req, res) => res.send("Hello World!! checked!"));
 
 const mongoose = require("mongoose");
-mongoose
-  .set("strictQuery", false)
-  .connect(config.mongoURI)
-  .then(() => console.log("mongoDB Connected.."))
-  .catch((err) => console.log(err));
+const MongoConnect = async () => {
+  await mongoose
+    .set("strictQuery", false)
+    // .connect(config.mongoURI, {
+    //   useNewUrlParser: true,
+    //   dbName: "react-bittersweetDB",
+    // })
+    .connect(config.mongoURI)
+    .then(() => console.log("mongoDB Connected.."))
+    .catch((err) => console.log(err));
+};
+MongoConnect();
 
 //=====Register(Sign-up) Route=====
 app.post("/api/users/register", (req, res) => {
