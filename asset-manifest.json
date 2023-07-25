@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Jiyaho/react-bittersweet/static/css/main.c7ca37d1.css",
+    "main.js": "/Jiyaho/react-bittersweet/static/js/main.19d0afc6.js",
+    "static/media/iced-americano1.jpg": "/Jiyaho/react-bittersweet/static/media/iced-americano1.f356801517e0bcf85535.jpg",
+    "static/media/coffee-bean02.jpg": "/Jiyaho/react-bittersweet/static/media/coffee-bean02.82ec3e19fe2576995434.jpg",
+    "static/media/iced-americano.jpg": "/Jiyaho/react-bittersweet/static/media/iced-americano.ccd2588edbff069a4531.jpg",
+    "static/media/menu-coffee.jpg": "/Jiyaho/react-bittersweet/static/media/menu-coffee.861627e743e7e993057b.jpg",
+    "static/media/coffee-bean01.jpg": "/Jiyaho/react-bittersweet/static/media/coffee-bean01.cf5ab7e4d6287e78d252.jpg",
+    "static/media/coffee-bean03.jpg": "/Jiyaho/react-bittersweet/static/media/coffee-bean03.bc5eeda8933caca1a37c.jpg",
+    "static/media/coffee01.jpg": "/Jiyaho/react-bittersweet/static/media/coffee01.cc004cf18ebefb04917e.jpg",
+    "static/media/coffee02.jpg": "/Jiyaho/react-bittersweet/static/media/coffee02.9b7ef0ce26f781a12112.jpg",
+    "static/media/menu-beverage.jpg": "/Jiyaho/react-bittersweet/static/media/menu-beverage.2530e796a3272c413c27.jpg",
+    "static/media/coffee-bean04.jpg": "/Jiyaho/react-bittersweet/static/media/coffee-bean04.bc3eac32d3ac9a09b4de.jpg",
+    "static/media/coffee-bean05.jpg": "/Jiyaho/react-bittersweet/static/media/coffee-bean05.dcfe21b36ad50325c8de.jpg",
+    "static/media/menu-tea.jpg": "/Jiyaho/react-bittersweet/static/media/menu-tea.6814330c3d5bfa1a1410.jpg",
+    "static/media/history.jpg": "/Jiyaho/react-bittersweet/static/media/history.d1cce1ccd7f9691a5a00.jpg",
+    "index.html": "/Jiyaho/react-bittersweet/index.html",
+    "static/media/logo.svg": "/Jiyaho/react-bittersweet/static/media/logo.38e9265452bf155a5912.svg",
+    "main.c7ca37d1.css.map": "/Jiyaho/react-bittersweet/static/css/main.c7ca37d1.css.map",
+    "main.19d0afc6.js.map": "/Jiyaho/react-bittersweet/static/js/main.19d0afc6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7ca37d1.css",
+    "static/js/main.19d0afc6.js"
+  ]
+}
