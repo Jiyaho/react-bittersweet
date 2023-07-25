@@ -1,20 +1,20 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "routes/home/Home";
-import AboutUs from "routes/aboutUs/AboutUs";
-import Menu from "routes/menu/Menu";
-import MenuDetail from "routes/menu/MenuDetail";
-import MenuBeverage from "routes/menu/MenuBeverage";
-import MenuCoffee from "routes/menu/MenuCoffee";
-import MenuTea from "routes/menu/MenuTea";
-import Store from "routes/store/Store";
-import Faq from "routes/faq/Faq";
-import Notice from "routes/whatsNew/Notice";
-import NoticeDetail from "routes/whatsNew/NoticeDetail";
-import NoticeWrite from "routes/whatsNew/NoticeWrite";
-import LoginPage from "routes/LoginPage";
-import RegisterPage from "routes/RegisterPage";
-import Auth from "hoc/auth";
-import NoticeEdit from "routes/whatsNew/NoticeEdit";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from 'routes/home/Home';
+import AboutUs from 'routes/aboutUs/AboutUs';
+import Menu from 'routes/menu/Menu';
+import MenuDetail from 'routes/menu/MenuDetail';
+import MenuBeverage from 'routes/menu/MenuBeverage';
+import MenuCoffee from 'routes/menu/MenuCoffee';
+import MenuTea from 'routes/menu/MenuTea';
+import Store from 'routes/store/Store';
+import Faq from 'routes/faq/Faq';
+import Notice from 'routes/whatsNew/Notice';
+import NoticeDetail from 'routes/whatsNew/NoticeDetail';
+import NoticeWrite from 'routes/whatsNew/NoticeWrite';
+import LoginPage from 'routes/LoginPage';
+import RegisterPage from 'routes/RegisterPage';
+import Auth from 'hoc/auth';
+import NoticeEdit from 'routes/whatsNew/NoticeEdit';
 
 function App() {
   // =====페이지 접근 권한 설정=====
@@ -34,7 +34,7 @@ function App() {
   const AuthRegisterPage = Auth(RegisterPage, false);
 
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<AuthHomePage />} />
         <Route path="/login" element={<AuthLoginPage />} />

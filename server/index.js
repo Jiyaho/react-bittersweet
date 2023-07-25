@@ -1,45 +1,46 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const config = require("./config/key");
-const cookieParser = require("cookie-parser");
-const { User } = require("./models/User");
-const { auth } = require("./middleware/auth");
-const { Posting } = require("./models/Posting");
-const cors = require("cors");
-const https = require("https");
-const fs = require("fs");
+const config = require('./config/key');
+const cookieParser = require('cookie-parser');
+const { User } = require('./models/User');
+const { auth } = require('./middleware/auth');
+const { Posting } = require('./models/Posting');
+const cors = require('cors');
+const https = require('https');
+const fs = require('fs');
 const httpPort = 5000;
 const httpsPort = 8080;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   //배포(prod.)환경일 때의 설정
   //Encrypt key
   const option = {
-    ca: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/fullchain.pem"),
-    key: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/privkey.pem"),
-    cert: fs.readFileSync("/etc/letsencrypt/live/bittersweet.ml/cert.pem"),
+    ca: fs.readFileSync('/etc/letsencrypt/live/bittersweet.ml/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/bittersweet.ml/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/bittersweet.ml/cert.pem'),
   };
   //https서버를 만드는 부분
   https.createServer(option, app).listen(httpsPort, () => {
-    console.log("https 서버 실행 성공 포트 :: " + httpsPort);
+    console.log('https 서버 실행 성공 포트 :: ' + httpsPort);
   });
   //http서버
   app.listen(httpPort, () => {
-    console.log("http 서버 실행 성공 포트 :: " + httpPort);
+    console.log('http 서버 실행 성공 포트 :: ' + httpPort);
   });
 } else {
   //개발(dev.)환경일 때의 설정
   app.listen(httpPort, () => {
-    console.log("http 서버 실행 성공 포트 :: " + httpPort);
+    console.log('http 서버 실행 성공 포트 :: ' + httpPort);
   });
 }
 
 //CORS ISSUE
 let corsOptions = {
   origin: [
-    "http://localhost:3000",
-    "https://bittersweet.ml",
-    "https://www.bittersweet.ml",
+    'http://localhost:3000',
+    // "https://bittersweet.ml",
+    // "https://www.bittersweet.ml",
+    'https://jiyaho.github.io/react-bittersweet/',
   ],
   credentials: true,
 };
@@ -52,24 +53,24 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-app.get("/", (req, res) => res.send("Hello World!! checked!"));
+app.get('/', (req, res) => res.send('Hello World!! checked!'));
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const MongoConnect = async () => {
   await mongoose
-    .set("strictQuery", false)
+    .set('strictQuery', false)
     // .connect(config.mongoURI, {
     //   useNewUrlParser: true,
     //   dbName: "react-bittersweetDB",
     // })
     .connect(config.mongoURI)
-    .then(() => console.log("mongoDB Connected.."))
+    .then(() => console.log('mongoDB Connected..'))
     .catch((err) => console.log(err));
 };
 MongoConnect();
 
 //=====Register(Sign-up) Route=====
-app.post("/api/users/register", (req, res) => {
+app.post('/api/users/register', (req, res) => {
   //회원가입 시 필요한 정보들을 Client에서 가져오면 그 값들을 DB에 넣어줌
   const user = new User(req.body); //유저가 입력한 로그인 정보들을 DB에 넣기 위함.
   user.save((err, userInfo) => {
@@ -80,13 +81,13 @@ app.post("/api/users/register", (req, res) => {
 });
 
 //=====Login Route=====
-app.post("/api/users/login", (req, res) => {
+app.post('/api/users/login', (req, res) => {
   //client에서 요청한 이메일을 DB에 있는지 찾아봄
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user) {
       return res.json({
         loginSuccess: false,
-        message: "제공된 이메일에 해당하는 유저가 없습니다.",
+        message: '제공된 이메일에 해당하는 유저가 없습니다.',
       });
     }
     //요청된 이메일이 DB에 있다면 비밀번호가 일치하는지 확인
@@ -95,14 +96,14 @@ app.post("/api/users/login", (req, res) => {
       if (!isMatch)
         return res.json({
           loginSuccess: false,
-          message: "비밀번호가 틀렸습니다.",
+          message: '비밀번호가 틀렸습니다.',
         });
       //비밀번호까지 맞다면? Token 생성
       user.generateToken((err, user) => {
         if (err) return res.status(400).send(err); //status(400): 에러있는 경우
         //cookieParser를 이용하여 토큰을 쿠키에 저장
         res
-          .cookie("x_auth", user.token) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
+          .cookie('x_auth', user.token) //cookie에 토큰을 "x_auth"라는 이름으로 넣음
           .status(200) //성공한 경우
           .json({ loginSuccess: true, userId: user._id });
       });
@@ -111,7 +112,7 @@ app.post("/api/users/login", (req, res) => {
 });
 
 //=====Authentication Route=====
-app.get("/api/users/auth", auth, (req, res) => {
+app.get('/api/users/auth', auth, (req, res) => {
   //2번째 인자는 middleware로서 콜백함수가 실행되기 전에 실행되는 것
 
   //auth = true인 경우 (유저 인증 성공한 경우) 아래 코드 실행함. status(200)
@@ -129,8 +130,8 @@ app.get("/api/users/auth", auth, (req, res) => {
 });
 
 //=====Log-out=====
-app.get("/api/users/logout", auth, (req, res) => {
-  User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err, user) => {
+app.get('/api/users/logout', auth, (req, res) => {
+  User.findOneAndUpdate({ _id: req.user._id }, { token: '' }, (err, user) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).send({
       success: true,
@@ -139,7 +140,7 @@ app.get("/api/users/logout", auth, (req, res) => {
 });
 
 //=====Get a User Name=====
-app.get("/api/users", auth, (req, res) => {
+app.get('/api/users', auth, (req, res) => {
   User.findById({ _id: req.user._id }, (err, result) => {
     if (err) return res.json({ success: false, err });
     return res.status(200).json(req.user.name);
@@ -147,7 +148,7 @@ app.get("/api/users", auth, (req, res) => {
 });
 
 //=====Posting=====
-app.post("/api/posting", (req, res) => {
+app.post('/api/posting', (req, res) => {
   const posting = new Posting(req.body);
   posting.save((err, result) => {
     if (err) return res.json({ postSuccess: false, err });
@@ -156,7 +157,7 @@ app.post("/api/posting", (req, res) => {
 });
 
 //=====Get Posts=====
-app.get("/api/posting", (req, res) => {
+app.get('/api/posting', (req, res) => {
   Posting.find((err, result) => {
     if (err) return res.json({ getPostsSuccess: false, err });
     return res.status(200).send(result);
@@ -164,19 +165,15 @@ app.get("/api/posting", (req, res) => {
 });
 
 //=====Update a Post=====
-app.patch("/api/posting/:_id", (req, res) => {
-  Posting.findByIdAndUpdate(
-    { _id: req.params._id },
-    req.body,
-    (err, result) => {
-      if (err) return res.json({ editSuccess: false, err });
-      return res.status(200).json({ editSuccess: true, result });
-    }
-  );
+app.patch('/api/posting/:_id', (req, res) => {
+  Posting.findByIdAndUpdate({ _id: req.params._id }, req.body, (err, result) => {
+    if (err) return res.json({ editSuccess: false, err });
+    return res.status(200).json({ editSuccess: true, result });
+  });
 });
 
 //=====Delete a Post=====
-app.delete("/api/posting/:_id", (req, res) => {
+app.delete('/api/posting/:_id', (req, res) => {
   Posting.findByIdAndDelete({ _id: req.params._id }, (err, result) => {
     if (err) return res.json({ deleteSuccess: false, err });
     return res.status(200).json({ deleteSuccess: true, result });

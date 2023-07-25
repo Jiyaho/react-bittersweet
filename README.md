@@ -1,6 +1,8 @@
 # Bittersweet Web Page
 
-### Web Page URL: https://bittersweet.ml/
+---
+
+Web Page URL: https://jiyaho.github.io/react-bittersweet
 
 ## 🔷 설명
 
@@ -10,7 +12,16 @@
 
 - 클라이언트는 CRA(Create React App)를 통해, 서버는 Node.js로 환경을 구축하기 위해 Express 프레임워크를 사용하였다. 로그인 및 게시판 CRUD 기능의 구현을 위해 Database는 MongoDB와 Mongoose를 사용하였다.
 
-- 배포는 먼저 도메인을 Freenom에서 발급받고 AWS Route53을 통해 호스팅 영역을 구성하였고, AWS EC2를 통해 배포를 진행하였다. 또한 HTTPS를 위한 SSL인증서를 발급받았다.
+## 🔷 사용 스택 및 스킬
+
+<div>
+    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
+    <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
+    <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+    <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white">
+    <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+</div>
 
 ## 🔷 폴더 구조 Tree
 

@@ -1,11 +1,10 @@
-import { faAutomobile } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
+import { useEffect } from 'react';
 const { kakao } = window;
 
 function KakaoMap() {
   useEffect(() => {
     //지도를 담을 영역의 DOM 레퍼런스
-    const mapContainer = document.getElementById("map");
+    const mapContainer = document.getElementById('map');
 
     //지도를 생성할 때 필요한 기본 옵션
     const mapOption = {
@@ -48,9 +47,9 @@ function KakaoMap() {
       id="map"
       style={{
         // marginTop: "60px",
-        width: "100%",
-        height: "70vh",
-        backgroundColor: "#c8c8c8",
+        width: '100%',
+        height: '70vh',
+        backgroundColor: '#c8c8c8',
         // marginBottom: "100px",
       }}
     ></div>
