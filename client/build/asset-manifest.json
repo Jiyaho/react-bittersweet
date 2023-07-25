@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-bittersweet/static/css/main.c7ca37d1.css",
-    "main.js": "/react-bittersweet/static/js/main.899f4a7b.js",
+    "main.js": "/react-bittersweet/static/js/main.6705f826.js",
     "static/media/iced-americano1.jpg": "/react-bittersweet/static/media/iced-americano1.f356801517e0bcf85535.jpg",
     "static/media/coffee-bean02.jpg": "/react-bittersweet/static/media/coffee-bean02.82ec3e19fe2576995434.jpg",
     "static/media/iced-americano.jpg": "/react-bittersweet/static/media/iced-americano.ccd2588edbff069a4531.jpg",
@@ -18,10 +18,10 @@
     "index.html": "/react-bittersweet/index.html",
     "static/media/logo.svg": "/react-bittersweet/static/media/logo.38e9265452bf155a5912.svg",
     "main.c7ca37d1.css.map": "/react-bittersweet/static/css/main.c7ca37d1.css.map",
-    "main.899f4a7b.js.map": "/react-bittersweet/static/js/main.899f4a7b.js.map"
+    "main.6705f826.js.map": "/react-bittersweet/static/js/main.6705f826.js.map"
   },
   "entrypoints": [
     "static/css/main.c7ca37d1.css",
-    "static/js/main.899f4a7b.js"
+    "static/js/main.6705f826.js"
   ]
 }
