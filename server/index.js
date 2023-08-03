@@ -23,7 +23,7 @@ if (process.env.NODE_ENV === 'production') {
   https.createServer(option, app).listen(httpsPort, () => {
     console.log('https 서버 실행 성공 포트 :: ' + httpsPort);
   });
-  //http서버
+  //http서버 
   app.listen(httpPort, () => {
     console.log('http 서버 실행 성공 포트 :: ' + httpPort);
   });
@@ -40,7 +40,7 @@ let corsOptions = {
     'http://localhost:3000',
     // "https://bittersweet.ml",
     // "https://www.bittersweet.ml",
-    'https://jiyaho.github.io/react-bittersweet/',
+    'https://jiyaho.github.io/react-bittersweet',
   ],
   credentials: true,
 };

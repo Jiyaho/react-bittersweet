@@ -23,6 +23,11 @@ Web Page URL: https://jiyaho.github.io/react-bittersweet
     <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
 </div>
 
+## 🔷 업데이트
+
+- 2023.07월 DNS 문제로 기존 URL로 접속 불가 https://bittersweet.ml
+- 정적 페이지 배포 https://jiyaho.github.io/react-bittersweet/
+
 ## 🔷 폴더 구조 Tree
 
 ```markup
