@@ -1,4 +1,4 @@
-# Bittersweet
+# Bittersweet Korea
 ---
 
 Web site URL 변경
