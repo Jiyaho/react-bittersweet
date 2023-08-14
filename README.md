@@ -1,9 +1,7 @@
 # Bittersweet Korea
 ---
 
-Web site URL 변경
-- 기존: https://bittersweet.ml
-- 신규: https://jiyaho.github.io/react-bittersweet
+Web site URL: https://jiyaho.github.io/react-bittersweet
 
 ## 🔷 설명
 
