@@ -1,8 +1,8 @@
-# Bittersweet Web Page
-
+# Bittersweet
+Coffee brand Bittersweet's web site
 ---
 
-Web Page URL: https://jiyaho.github.io/react-bittersweet
+Web site URL 변경: https://bittersweet.ml -> https://jiyaho.github.io/react-bittersweet
 
 ## 🔷 설명
 
