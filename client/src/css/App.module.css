@@ -5,7 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: 'Noto Sans KR', sans-serif; */
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --accent-color: rgb(163, 83, 22);
   --background-color: rgb(249, 246, 240);
   --text-color: #3b3939;
@@ -33,7 +33,7 @@
 .navbar {
   z-index: 1;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--background-color);
   opacity: 90%;
@@ -143,9 +143,7 @@
   cursor: pointer;
 }
 
-/* footer */
 footer {
-  position: relative;
   transform: translateY(100%);
   width: 100%;
   height: 100px;
@@ -155,7 +153,6 @@ footer {
   margin-top: -97px;
 }
 footer ul {
-  position: relative;
   transform: translateY(-100%);
   width: 900px;
   display: flex;
@@ -165,10 +162,10 @@ footer ul {
   color: white;
 }
 footer li {
-  list-style:square;
+  list-style: square;
 }
 .copyright {
-  position:absolute;
+  position: absolute;
   margin-top: 35px;
   color: white;
   list-style: none;
@@ -190,7 +187,7 @@ h1 {
   animation: slide-leftToRight 1s ease-out;
 }
 .new_menu ul {
-  font-size:1.1em;
+  font-size: 1.1em;
   position: absolute;
   color: white;
   top: 220px;
@@ -286,13 +283,17 @@ h1 {
   border-bottom: 5px solid var(--accent-color);
   margin-bottom: -2px;
 }
-.about_article1 h2, .about_article2 h2, .about_article3 h2 {
+.about_article1 h2,
+.about_article2 h2,
+.about_article3 h2 {
   font-size: 1.8em;
   text-align: center;
   margin-bottom: 15px;
   margin-top: 45px;
 }
-.about_article1 h3, .about_article2 h3, .about_article3 h3 {
+.about_article1 h3,
+.about_article2 h3,
+.about_article3 h3 {
   color: --var(--text-color);
   text-align: center;
   margin: auto;
@@ -310,7 +311,7 @@ h1 {
 .about_article1 img {
   width: 70%;
   display: block;
-  margin:auto;
+  margin: auto;
   margin-bottom: 100px;
 }
 .about_article2 {
@@ -335,7 +336,7 @@ h1 {
 .about_article2 img {
   width: 950px;
   display: block;
-  margin:auto;
+  margin: auto;
 }
 .about_article3 {
   padding-top: 50px;
@@ -351,7 +352,7 @@ h1 {
   font-size: 1em;
 }
 .coffeeBean1 {
-  margin:auto;
+  margin: auto;
   width: 950px;
   margin-top: 45px;
   margin-bottom: 20px;
@@ -396,6 +397,7 @@ h1 {
 .menu {
   margin-top: 30px;
   margin-bottom: 150px;
+  min-height: 100vh;
 }
 .menuCateBtnWrap {
   text-align: center;
@@ -426,13 +428,13 @@ h1 {
 .menu_div {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
 }
 .menu li {
   margin-bottom: 40px;
   width: 260px;
   height: 260px;
-  overflow:hidden;
+  overflow: hidden;
   margin-right: 13px;
   margin-left: 13px;
 }
@@ -463,7 +465,7 @@ h1 {
 .menuDetailLinkWrap {
   margin: 40px 0px -30px 155px;
 }
-.menuDetailLink:hover{
+.menuDetailLink:hover {
   color: var(--accent-color);
   border-bottom: 1px solid var(--accent-color);
 }
@@ -518,7 +520,9 @@ h1 {
   font-size: 1.2em;
   padding-bottom: 5px;
 }
-.menuSize_s, .menuSize_m, .menuSize_l {
+.menuSize_s,
+.menuSize_m,
+.menuSize_l {
   margin-bottom: 3px;
   font-size: 1em;
 }
@@ -534,7 +538,7 @@ h1 {
   width: 350px;
   margin-top: 50px;
 }
-.detail_article2 ul{
+.detail_article2 ul {
   list-style: none;
   padding-left: 0;
 }
@@ -597,21 +601,21 @@ h1 {
   place-content: none;
 }
 .faq_input:focus::-webkit-input-placeholder {
-  color:transparent;
+  color: transparent;
 }
-.question_container{
+.question_container {
+  min-height: 100vh;
   max-width: 800px;
   margin: auto;
-  margin-bottom: 300px;
 }
-.question button{
+.question button {
   width: 100%;
   background-color: rgb(195, 189, 160);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  border:none;
+  border: none;
   outline: none;
   font-size: 20px;
   color: #fff;
@@ -623,13 +627,13 @@ h1 {
   color: var(--accent-color);
 }
 .question_i {
-  transition: transform 0.5s ease-in ;
+  transition: transform 0.5s ease-in;
 }
 .question_i_rotate {
   transform: rotate(180deg);
   transition: all ease 1s;
 }
-.answer_p{
+.answer_p {
   max-height: 0;
   opacity: 0;
   line-height: 1.5;
@@ -638,12 +642,12 @@ h1 {
   transition: all 0.5s ease;
   height: 0px;
 }
-.answer_p_toggle{
+.answer_p_toggle {
   background-color: rgb(195, 189, 160);
   border-top: 3px dotted white;
   color: white;
   font-size: 1.2em;
-  max-height: 200px; 
+  max-height: 200px;
   opacity: 1;
   padding: 5px 10px 8px 16px;
   margin-bottom: 5px;
@@ -652,6 +656,9 @@ h1 {
 }
 
 /* Notice.js */
+.noticeDiv {
+  min-height: 100vh;
+}
 .writeBtn {
   margin-left: 80%;
   margin-bottom: 30px;
@@ -669,7 +676,8 @@ h1 {
   border-right: none;
   margin-bottom: 230px;
 }
-.noticeTable th, .noticeTable td {
+.noticeTable th,
+.noticeTable td {
   padding: 17px;
 }
 .noticeDiv th {
@@ -677,11 +685,10 @@ h1 {
   border-bottom: 2px solid black;
 }
 .noticeDiv td {
-  border-bottom: 1px solid gray ;
+  border-bottom: 1px solid gray;
 }
 .notice_title {
   text-align: left;
-
 }
 
 /* noticeDetail */
@@ -698,7 +705,7 @@ h1 {
   margin-top: 50px;
   list-style: none;
 }
-.detailTitle  {
+.detailTitle {
   width: 60%;
   font-size: 1.3em;
 }
@@ -737,13 +744,14 @@ h1 {
   cursor: pointer;
   background-color: var(--accent-color);
   color: white;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
 /* NoticeWrite.js */
-.wrapNoticeWrite{
+.wrapNoticeWrite {
   width: 50%;
   margin: auto;
+  min-height: 100vh;
 }
 .wrapNoticeWrite label {
   font-size: 1.4em;
@@ -757,10 +765,12 @@ h1 {
   height: 50px;
   padding: 10px;
 }
-.titleInput::placeholder, textarea::placeholder {
+.titleInput::placeholder,
+textarea::placeholder {
   font-size: 1.3em;
 }
-textarea:focus, .titleInput:focus {
+textarea:focus,
+.titleInput:focus {
   outline: none;
 }
 .contentWrap {
@@ -791,7 +801,7 @@ textarea {
   cursor: pointer;
   background-color: var(--accent-color);
   color: white;
-  border-radius:5px;
+  border-radius: 5px;
   border: none;
 }
 
@@ -859,10 +869,10 @@ textarea {
     margin-left: 86.5%;
     margin-top: 500px;
     cursor: pointer;
-    opacity: 0.70;
+    opacity: 0.7;
     z-index: 1;
   }
-  
+
   /* media > navbar */
   .navbar {
     flex-direction: column;
@@ -910,7 +920,7 @@ textarea {
     border-radius: 4px;
   }
   .navbar_menuToggle li:hover a {
-    color: var(--accent-color)
+    color: var(--accent-color);
   }
   .navbar button {
     display: flex;
@@ -919,7 +929,7 @@ textarea {
     top: 18px;
     left: 233px;
     text-align: center;
-    padding: 0px
+    padding: 0px;
   }
   .navbar_loginToggle {
     display: flex;
@@ -938,7 +948,6 @@ textarea {
     padding-top: 0.2px;
     font-size: 0.8em;
     margin-top: -138px;
-
   }
   footer ul {
     width: 80%;
@@ -957,7 +966,7 @@ textarea {
   }
   .copyright {
     align-self: center;
-    position:absolute;
+    position: absolute;
     margin-top: 110px;
     color: white;
     font-size: 0.9em;
@@ -1125,7 +1134,7 @@ textarea {
   .menuCateBtnWrap button {
     width: 100px;
     height: 50px;
-    font-size: 1.0em;
+    font-size: 1em;
     border: none;
     cursor: pointer;
     color: black;
@@ -1162,7 +1171,6 @@ textarea {
   .menu img {
     width: 180px;
     height: 190px;
-
   }
   .menu img:hover {
     transform: none;
@@ -1256,7 +1264,8 @@ textarea {
     width: 95%;
     margin-bottom: 350px;
   }
-  .noticeTable th, .noticeTable td {
+  .noticeTable th,
+  .noticeTable td {
     padding: 15px 0px 15px 0px;
   }
   .noticeTable td {
@@ -1306,14 +1315,13 @@ textarea {
   }
 
   /* media > NoticeWrite */
-  .wrapNoticeWrite{
+  .wrapNoticeWrite {
     width: 90%;
   }
   .postCancleBtn {
-    margin-right: -170px;
+    margin-right: -50px;
   }
   .noticeWriteBtnWrap button {
     font-size: 0.9em;
   }
 }
-

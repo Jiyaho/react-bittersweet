@@ -43,16 +43,14 @@ function KakaoMap() {
   //컴포넌트가 처음 렌더링 될 때 지도를 띄우기 위해 두 번째 인자를 [](빈배열)로 설정
 
   return (
-    <div
+    <article
       id="map"
       style={{
-        // marginTop: "60px",
         width: '100%',
         height: '70vh',
         backgroundColor: '#c8c8c8',
-        // marginBottom: "100px",
       }}
-    ></div>
+    ></article>
   );
 }
 export default KakaoMap;
