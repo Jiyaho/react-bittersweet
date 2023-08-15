@@ -26,12 +26,16 @@
 ## 🔷 Screenshot
 
 <img src="https://i.ibb.co/C54GSdp/bittersweet-thumbnail.png" alt="bittersweet-thumbnail" />
+<img src="https://i.ibb.co/986cpNc/bittersweet10.png" alt="bittersweet10" />
+<img src="https://i.ibb.co/nfVF8z8/bittersweet13.png" alt="bittersweet13" />
+<img src="https://i.ibb.co/54yc1tn/bittersweet12.png" alt="bittersweet12" >
+<img src="https://i.ibb.co/R6ds1cN/bittersweet15.png" alt="bittersweet15" />
+<img src="https://i.ibb.co/DwVHr9L/bittersweet17.png" alt="bittersweet17" />
+<img src="https://i.ibb.co/xJpn9SW/bittersweet20.png" alt="bittersweet20" />
 
 ## 🔷 구동화면 동영상
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aBwga7D4Bac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aBwga7D4Bac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![video](https://img.youtube.com/vi/aBwga7D4Bac/0.jpg)](https://www.youtube.com/aBwga7D4Bac&t=24s)
 
 ## 🔷 업데이트
 
