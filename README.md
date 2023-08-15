@@ -30,12 +30,11 @@
 <img src="https://i.ibb.co/nfVF8z8/bittersweet13.png" alt="bittersweet13" />
 <img src="https://i.ibb.co/54yc1tn/bittersweet12.png" alt="bittersweet12" >
 <img src="https://i.ibb.co/R6ds1cN/bittersweet15.png" alt="bittersweet15" />
-<img src="https://i.ibb.co/DwVHr9L/bittersweet17.png" alt="bittersweet17" />
 <img src="https://i.ibb.co/xJpn9SW/bittersweet20.png" alt="bittersweet20" />
 
 ## 🔷 구동화면 동영상
 
-[![video](https://img.youtube.com/vi/aBwga7D4Bac/0.jpg)](https://www.youtube.com/aBwga7D4Bac&t=24s)
+[![video](https://img.youtube.com/vi/aBwga7D4Bac/0.jpg)](https://www.youtube.com/watch?v=aBwga7D4Bac&t=24s)
 
 ## 🔷 업데이트
 
