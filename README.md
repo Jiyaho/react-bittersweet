@@ -2,9 +2,10 @@
 
 ## 🔷 URL
 
-- https://jiyaho.github.io/react-bittersweet
+- Web Site: https://jiyaho.github.io/react-bittersweet
+- Github Repository: https://github.com/Jiyaho/react-bittersweet
 
-## 🔷 설명
+## 🔷 Description
 
 - ‘Bittersweet Korea’라는 임의의 커피 브랜드를 만들어 해당 브랜드 관련 내용을 소개 및 안내하는 웹 페이지를 구현한다.
 
@@ -28,20 +29,19 @@
 <img src="https://i.ibb.co/C54GSdp/bittersweet-thumbnail.png" alt="bittersweet-thumbnail" />
 <img src="https://i.ibb.co/986cpNc/bittersweet10.png" alt="bittersweet10" />
 <img src="https://i.ibb.co/nfVF8z8/bittersweet13.png" alt="bittersweet13" />
-<img src="https://i.ibb.co/54yc1tn/bittersweet12.png" alt="bittersweet12" >
 <img src="https://i.ibb.co/R6ds1cN/bittersweet15.png" alt="bittersweet15" />
 <img src="https://i.ibb.co/xJpn9SW/bittersweet20.png" alt="bittersweet20" />
 
-## 🔷 구동화면 동영상
+## 🔷 Video Link
 
 [![video](https://img.youtube.com/vi/aBwga7D4Bac/0.jpg)](https://www.youtube.com/watch?v=aBwga7D4Bac&t=24s)
 
-## 🔷 업데이트
+## 🔷 Update
 
 - 2023.07월 DNS 문제로 기존 URL로 접속 불가 https://bittersweet.ml
 - 정적 페이지 배포 https://jiyaho.github.io/react-bittersweet/
 
-## 🔷 폴더 구조 Tree
+## 🔷 File Tree Structure
 
 ```markup
 react-bittersweet
