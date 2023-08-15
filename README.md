@@ -1,7 +1,8 @@
 # Bittersweet Korea
----
 
-Web site URL: https://jiyaho.github.io/react-bittersweet
+## 🔷 URL
+
+- https://jiyaho.github.io/react-bittersweet
 
 ## 🔷 설명
 
@@ -21,6 +22,16 @@ Web site URL: https://jiyaho.github.io/react-bittersweet
     <img src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white" />
     <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white" />
 </div>
+
+## 🔷 Screenshot
+
+<img src="https://i.ibb.co/C54GSdp/bittersweet-thumbnail.png" alt="bittersweet-thumbnail" />
+
+## 🔷 구동화면 동영상
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aBwga7D4Bac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aBwga7D4Bac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## 🔷 업데이트
 
