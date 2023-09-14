@@ -26,9 +26,9 @@ function NoticeWrite() {
   const onSubmit = (e) => {
     e.preventDefault();
     let body = {
-      writer: writer,
-      title: title,
-      content: content,
+      writer,
+      title,
+      content,
     };
     dispatch(userPosting(body)).then((response) => {
       if (response.payload.postSuccess) {

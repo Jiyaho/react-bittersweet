@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-bittersweet/static/css/main.c7ca37d1.css",
-    "main.js": "/react-bittersweet/static/js/main.6705f826.js",
+    "main.css": "/react-bittersweet/static/css/main.7406c888.css",
+    "main.js": "/react-bittersweet/static/js/main.1355c837.js",
     "static/media/iced-americano1.jpg": "/react-bittersweet/static/media/iced-americano1.f356801517e0bcf85535.jpg",
     "static/media/coffee-bean02.jpg": "/react-bittersweet/static/media/coffee-bean02.82ec3e19fe2576995434.jpg",
     "static/media/iced-americano.jpg": "/react-bittersweet/static/media/iced-americano.ccd2588edbff069a4531.jpg",
@@ -17,11 +17,11 @@
     "static/media/history.jpg": "/react-bittersweet/static/media/history.d1cce1ccd7f9691a5a00.jpg",
     "index.html": "/react-bittersweet/index.html",
     "static/media/logo.svg": "/react-bittersweet/static/media/logo.38e9265452bf155a5912.svg",
-    "main.c7ca37d1.css.map": "/react-bittersweet/static/css/main.c7ca37d1.css.map",
-    "main.6705f826.js.map": "/react-bittersweet/static/js/main.6705f826.js.map"
+    "main.7406c888.css.map": "/react-bittersweet/static/css/main.7406c888.css.map",
+    "main.1355c837.js.map": "/react-bittersweet/static/js/main.1355c837.js.map"
   },
   "entrypoints": [
-    "static/css/main.c7ca37d1.css",
-    "static/js/main.6705f826.js"
+    "static/css/main.7406c888.css",
+    "static/js/main.1355c837.js"
   ]
 }
